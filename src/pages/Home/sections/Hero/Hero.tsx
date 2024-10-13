@@ -4,7 +4,6 @@ import Grid from '@mui/material/Grid2';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import EmailIcon from '@mui/icons-material/Email';
 import StyledButton from "../../../../components/StyledButton/StyledButton";
-import theme from "../../../../theme";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackGround";
 
 const Hero = () => {
@@ -14,7 +13,7 @@ const Hero = () => {
           height: "100vh",
           display:"flex",
           alignItems:"center",
-          [theme.breakpoints.up('xs')]: { // <= mobile
+        [theme.breakpoints.up('xs')]: { // <= mobile
             paddingTop: "50px",
 
         },
@@ -28,7 +27,14 @@ const Hero = () => {
         borderRadius: "50%",
         border: `1px solid ${theme.palette.primary.contrastText}`
     }))
- 
+    
+    const handleDownloadCV = () => {
+        window.open('https://github.com/dayannaclaudino/DayannaClaudino/blob/main/CV%20-%20Dayanna%20Fernanda%20Claudino%20da%20Silva.pdf', '_blank');
+    };
+
+    const handleContactMe = () => {
+        window.location.href = 'mailto:day_claudino@hotmail.com';
+    };
     return (
 
       <>
@@ -45,12 +51,12 @@ const Hero = () => {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid size={{ xs: 12, md: 7 }}>
+                    <Grid size={{ xs: 12, md: 7 }} pt={4}>
                         <Typography color="primary.contrastText" variant="h2" textAlign="center" pb={2}>Dayanna Claudino</Typography>
                         <Typography color="primary.contrastText" variant="h3" textAlign="center">Eu sou Analista de Sistemas </Typography>
                     <Grid container display="flex" justifyContent="center" spacing={3} pt={3}> 
                         <Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
-                            <StyledButton onclick={()=> console.log("download")}>
+                            <StyledButton onclick={handleDownloadCV}>
                                 <FileDownloadIcon/>
                                     <Typography>
                                         Download CV
@@ -58,7 +64,7 @@ const Hero = () => {
                             </StyledButton>
                         </Grid>
                         <Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
-                            <StyledButton onclick={()=> console.log("contate-me")}> 
+                            <StyledButton onclick={handleContactMe}> 
                             <EmailIcon/>
                                 <Typography>
                                     Contate-me
