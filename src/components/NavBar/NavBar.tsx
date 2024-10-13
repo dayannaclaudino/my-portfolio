@@ -11,9 +11,9 @@ const NavBar = () => {
         <>
             <AppBar position="absolute">
                 <StyledToobar>
-                    <MenuItem>Sobre</MenuItem>
-                    <MenuItem>Skills</MenuItem>
-                    <MenuItem>Projetos</MenuItem>
+                    <MenuItem component="a" href="#about-section">Sobre</MenuItem>
+                    <MenuItem component="a" href="#skills-section">Skills</MenuItem>
+                    <MenuItem component="a" href="#projects-section">Projetos</MenuItem>
                 </StyledToobar>
             </AppBar>
         </>
